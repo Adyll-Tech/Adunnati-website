@@ -12,31 +12,30 @@ export const About: React.FC = () => {
           </div>
 
           <h2 className="about-heading">
-            GOOD BUSINESSES DESERVE GOOD 
-            DIGITAL THINKING
+            Good businesses deserve <br className="about-heading-br" />good digital thinking
           </h2>
 
           <div className="about-narrative">
-            <p>
+            <p className="about-subheading">
               Adunnati is a digital growth partner working across strategy,
               digital experiences and performance marketing.
             </p>
-            <p>
+            <p className="about-subheading">
               We bring together the elements that shape how a business shows
               up online, attracts customers and turns attention into action.
             </p>
-            <p>
+            <p className="about-subheading">
               Our approach is straightforward: understand the business,
               find the right opportunities and do the work with care.
             </p>
           </div>
 
-          <div className="about-actions">
+          {/* <div className="about-actions">
             <a href="#contact" className="about-cta-btn">
               <span>Get To Know Us</span>
               <span className="about-cta-arrow" aria-hidden="true">↗</span>
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Architectural 3D Scene - Immersive & Seamless */}

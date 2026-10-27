@@ -9,14 +9,13 @@ export const Hero: React.FC = () => {
           DIGITAL STRATEGY <i>·</i> MARKETING <i>·</i> GROWTH
         </div>
         <h1 className="hero-headline">
-          MAKE YOUR NEXT STAGE
-          OF GROWTH COUNT 
+          Make Your Next Stage of Growth Count
         </h1>
-        <p>
+        <p className="hero-subheading">
           We help ambitious businesses build a stronger digital presence, acquire customers and turn marketing investment into meaningful business results.
         </p>
         <div className="hero-actions">
-          <a href="#contact" className="dark-button hero-button">
+          <a href="#lets-talk" className="dark-button hero-button">
             Discuss Your Goals <span>↗</span>
           </a>
         </div>
@@ -24,6 +23,8 @@ export const Hero: React.FC = () => {
 
       {/* Right Visual 3D Stage with Authentic Laptop resting on Stone and Flanked Metric Cards */}
       <div className="hero-visual-3d" aria-label="Premium digital brand presentation">
+        <div className="hero-3d-ambient-glow" aria-hidden="true"></div>
+        <div className="hero-plinth-shadow" aria-hidden="true"></div>
         <div className="hero-stage-artwork-wrapper">
           <img
             src="/assets/hero-stage-hd.png"

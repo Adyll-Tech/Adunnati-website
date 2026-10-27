@@ -11,16 +11,10 @@ import { Footer } from './components/Footer';
 export const App: React.FC = () => {
   return (
     <div className="site-shell" id="home">
-      {/* 3D Floating Stage Architecture: Perspective Outer Container */}
-      <div className="hero-stage-outer">
-        {/* Soft Ambient Ground Shadow under the floating slab */}
-        <div className="hero-ground-shadow" aria-hidden="true"></div>
-
-        {/* Floating 3D Slab / Canvas Card */}
-        <div className="hero-floating-slab">
-          <Header />
-          <Hero />
-        </div>
+      {/* Hero Section (Flat view) */}
+      <div className="hero-flat-section">
+        <Header />
+        <Hero />
       </div>
 
       <main>

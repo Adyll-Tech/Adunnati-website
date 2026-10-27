@@ -59,16 +59,15 @@ export const FeaturedWork: React.FC = () => {
     <section className="work-section" id="work">
       <div className="container">
         <div className="section-intro services-intro work-intro">
-          <div>
+          <div className="section-intro-left">
             <div className="eyebrow">FEATURED WORK</div>
-            <h2>REAL BRANDS REAL RESULTS</h2>
-          </div>
-          <div className="intro-right">
-            <p>Every business has a different challenge. Our work starts by understanding it, finding the right approach and focusing on the outcome that matters.</p>
-            <a className="outline-button" href="#contact">View All Work <span>→</span></a>
+            <h2>Real brands Real results</h2>
+            <p className="section-subheading">
+              Every business has a different challenge. Our work starts by understanding it, finding the right approach and focusing on the outcome that matters.
+            </p>
           </div>
         </div>
-
+ 
         <div className="work-grid">
           {CASE_STUDIES.map((study) => (
             <article className="work-card case-study-card" key={study.id}>

@@ -16,11 +16,11 @@ export const LetsTalk: React.FC = () => {
             </div>
 
             <h2 className="talk-heading">
-              TELL US WHERE<br />
-              YOU WANT TO GO
+              Tell us where 
+              you want to go
             </h2>
 
-            <p className="talk-narrative">
+            <p className="talk-narrative talk-subheading">
               Whether you're building your digital presence, looking to bring in more
               customers or trying to get more from your marketing, let's start with a
               conversation about your business.

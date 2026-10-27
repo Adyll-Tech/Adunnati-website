@@ -49,108 +49,47 @@ button {
 }
 
 /* ==========================================================================
-   1. The 3D Floating Stage Architecture
+   1. The Hero Flat Section Architecture
    ========================================================================== */
+.hero-flat-section,
 .hero-stage-outer {
-    perspective: 1200px;
-    perspective-origin: 50% 38%;
-    overflow: visible;
-    background-color: #E6E1D8;
-    padding: 44px 36px 0;
+    background-color: #FAF8F4;
     position: relative;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
 }
 
-/* Realistic Ground Cast Shadow under the 3D Slab */
 .hero-ground-shadow {
-    position: absolute;
-    bottom: 0px;
-    left: 11%;
-    right: 5%;
-    height: 70px;
-    border-radius: 50%;
-    background: radial-gradient(ellipse at 50% 50%, rgba(24, 20, 16, 0.45) 0%, rgba(24, 20, 16, 0.22) 45%, transparent 75%);
-    filter: blur(28px);
-    pointer-events: none;
-    z-index: 1;
+    display: none !important;
 }
 
 .hero-floating-slab {
     width: 100%;
-    max-width: 1300px;
     margin: 0 auto;
-    background-color: #F5F2EC;
-    border-radius: 28px;
-    border: 1px solid rgba(250, 248, 244, 0.95);
-    /* Shifted right so left and right margins of the 3D box are precisely equal */
-    transform: translateX(96px) rotateY(11deg) rotateX(3.5deg) rotateZ(-0.8deg);
-    transform-style: preserve-3d;
-    box-shadow: 
-        /* Physical Left Extrusion Edge (Solid 3D Block Thickness) */
-        -1px 0 0 #dfd8ce,
-        -2px 0 0 #dfd8ce,
-        -3px 0 0 #ded7cd,
-        -4px 0 0 #ded7cd,
-        -5px 0 0 #dbd4ca,
-        -6px 0 0 #d8d1c7,
-        -8px 0 0 #d5cec4,
-        -10px 0 0 #d1caa0,
-        -12px 0 0 #cdc6bc,
-        -14px 0 0 #c8c1b7,
-        -16px 0 0 #c3bcb2,
-        -18px 0 0 #beaba0,
-        -20px 0 0 #b8a59a,
-        -22px 1px 0 #b09e93,
-        -24px 2px 0 #a8968b,
-        /* Deep Left Shadow from the Extruded Wall */
-        -42px 28px 65px rgba(24, 20, 16, 0.32),
-        /* Multi-tiered 3D Box Elevation Shadows */
-        0 15px 25px -4px rgba(24, 20, 16, 0.24),
-        0 35px 50px -10px rgba(24, 20, 16, 0.34),
-        0 65px 95px -18px rgba(24, 20, 16, 0.44),
-        15px 95px 145px -25px rgba(24, 20, 16, 0.38),
-        35px 55px 90px -12px rgba(24, 20, 16, 0.25),
-        /* Crisp Top & Left Chamfer Highlights */
-        inset 0 2px 0 rgba(255, 255, 255, 0.98),
-        inset 2px 0 0 rgba(255, 255, 255, 0.7);
-    position: relative;
-    padding: 32px 52px 54px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    transform: none !important;
+    box-shadow: none !important;
+    padding: 0;
     overflow: visible;
-    z-index: 1;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.hero-floating-slab:hover {
-    transform: translateX(96px) rotateY(9.5deg) rotateX(2.8deg) rotateZ(-0.8deg) translateY(-4px);
-    box-shadow: 
-        -1px 0 0 #dfd9cf,
-        -3px 0 0 #dbd5cb,
-        -7px 0 0 #d8d2c8,
-        -12px 0 0 #d2ccc2,
-        -18px 0 0 #ccc6bc,
-        -24px 0 0 #c2bcaf,
-        -28px 2px 0 #b4a398,
-        -48px 30px 80px rgba(24, 20, 16, 0.38),
-        0 20px 30px -4px rgba(24, 20, 16, 0.28),
-        0 45px 65px -10px rgba(24, 20, 16, 0.42),
-        0 85px 125px -20px rgba(24, 20, 16, 0.48),
-        25px 115px 165px -28px rgba(24, 20, 16, 0.42),
-        40px 65px 105px -14px rgba(24, 20, 16, 0.28),
-        inset 0 2px 0 rgba(255, 255, 255, 1),
-        inset 2px 0 0 rgba(255, 255, 255, 0.8);
 }
 
 /* Embedded Navbar inside the 3D Slab */
 .site-header {
-    height: 76px;
+    width: min(88%, 1350px);
+    margin: 0 auto;
+    padding: 32px 0 16px;
+    height: auto;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
     position: relative;
-    z-index: 20;
-    margin-bottom: 28px;
+    z-index: 50;
+    margin-bottom: 0;
 }
 
 .logo {
@@ -270,32 +209,38 @@ button {
 }
 
 /* ==========================================================================
-   Hero Content & 3D Visual Stage
+   Hero Content & Visual Stage (Flat View)
    ========================================================================== */
 .hero-content-stage {
+    width: min(88%, 1350px);
+    margin: 0 auto;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+    gap: 40px;
     position: relative;
-    min-height: 510px;
-    transform-style: preserve-3d;
+    min-height: 520px;
+    padding: 24px 0 0;
 }
 
 .hero-copy {
     position: relative;
     z-index: 5;
-    max-width: 48%;
-    transform: translateZ(20px);
+    flex: 1;
+    max-width: 640px;
+    transform: none;
+    align-self: center;
+    padding-bottom: 48px;
 }
 
 .eyebrow,
 .hero-copy .eyebrow {
     font-size: 11px;
-    letter-spacing: .2em;
+    letter-spacing: .22em;
     font-weight: 600;
     text-transform: uppercase;
-    color: #8A8379;
-    margin-bottom: 20px;
+    color: #7E786E;
+    margin-bottom: 14px;
     font-family: 'DM Sans', sans-serif;
 }
 
@@ -311,11 +256,8 @@ p {
     margin-top: 0;
 }
 
-h1,
-h2,
 .service-card h3,
 .work-card h3,
-.trust-copy h2,
 .testimonial blockquote {
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 400;
@@ -323,49 +265,68 @@ h2,
 
 .hero-copy h1,
 .hero-headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(35px, 4.2vw, 50px);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.015em;
-    line-height: 1.06;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
     color: #141312;
-    margin: 0 0 24px;
+    text-align: left;
+    padding-bottom: 0;
+    margin: 0 0 16px;
+    text-wrap: balance;
 }
 
-.hero-copy p {
-    font-size: 16px;
-    line-height: 1.68;
-    color: #4A4641;
-    max-width: 500px;
+.hero-headline-br {
+    display: inline;
+}
+
+.hero-copy p,
+.hero-subheading {
+    font-family: 'Noto Serif', 'Noto Serif Fallback', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.25px;
+    text-align: left;
+    color: rgb(13, 13, 13);
+    max-width: 520px;
     margin: 0 0 32px;
+    text-wrap: pretty;
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 20px;
 }
 
 .hero-button {
-    min-width: 190px;
-    background: #000000;
+    min-width: 180px;
+    background: #141312;
     color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    padding: 16px 26px;
-    font-size: 13px;
+    border: 1px solid #141312;
+    border-radius: 9999px;
+    padding: 15px 28px;
+    font-size: 13.5px;
     font-weight: 600;
-    letter-spacing: 0.03em;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 .hero-button:hover {
-    background: #252422;
-    border-color: #252422;
+    background: #2b2825;
+    border-color: #2b2825;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
 }
 
 .watch-link {
@@ -390,31 +351,64 @@ h2,
 }
 
 /* ==========================================================================
-   3D Visual Stage Container (Authentic Composition)
+   Hero Visual Stage (3D Depth & Presentation)
    ========================================================================== */
 .hero-visual-3d {
-    position: absolute;
-    width: 63%;
-    right: -24px;
-    bottom: -54px;
-    top: -12px;
-    pointer-events: none;
-    z-index: 2;
-    transform-style: preserve-3d;
+    position: relative;
+    flex: 1.25;
+    max-width: 740px;
+    width: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    z-index: 2;
+    pointer-events: none;
+    margin-right: -20px;
+    margin-bottom: -1px;
+    perspective: 1200px;
+}
+
+/* Ambient glow highlighting 3D laptop screen and composition */
+.hero-3d-ambient-glow {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 65%;
+    height: 60%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.7) 0%, rgba(238, 233, 224, 0.3) 50%, transparent 75%);
+    filter: blur(45px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Tactile ground contact shadow under the stone plinth */
+.hero-plinth-shadow {
+    position: absolute;
+    bottom: 2px;
+    right: 4%;
+    width: 82%;
+    height: 32px;
+    background: radial-gradient(ellipse at 50% 50%, rgba(20, 16, 12, 0.42) 0%, rgba(20, 16, 12, 0.16) 45%, transparent 75%);
+    filter: blur(14px);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .hero-stage-artwork-wrapper {
     position: relative;
     width: 100%;
     max-width: 740px;
-    transform: translateZ(35px);
-    filter: drop-shadow(0 20px 30px rgba(24, 20, 16, 0.22));
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 100%);
+    z-index: 1;
+    /* Seamless left blending: smoothly dissolves the dark studio box so floating elements emerge */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 5%, rgba(0, 0, 0, 0.85) 16%, black 26%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 5%, rgba(0, 0, 0, 0.85) 16%, black 26%);
+    /* Authentic 3D elevation and realistic depth angle (fixed, no hover movement) */
+    filter: drop-shadow(0 20px 35px rgba(20, 16, 12, 0.16));
+    transform: perspective(1000px) rotateY(-2.5deg) rotateX(1.5deg) translateZ(0);
+    pointer-events: none;
 }
 
 .hero-stage-artwork-img {
@@ -426,7 +420,7 @@ h2,
 }
 
 /* ==========================================================================
-   Services Section
+   Services Section (Clean Flat Divider)
    ========================================================================== */
 .services-section,
 .work-section,
@@ -438,40 +432,21 @@ footer {
 }
 
 .services-section {
-    padding: 44px 0 63px;
+    padding: 72px 0 64px;
     background: #f6f3ee;
     position: relative;
     z-index: 2;
-    margin-top: -26px;
+    margin-top: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .services-section:before {
-    content: '';
-    position: absolute;
-    top: -38px;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background: linear-gradient(180deg, #FAF8F5 0%, #f6f3ee 100%);
-    clip-path: polygon(0 0, 100% 38px, 100% 100%, 0 100%);
-    pointer-events: none;
+    display: none !important;
 }
 
-/* 3D Folded Origami Chevron Facet on the far left */
+/* 3D Folded Origami Chevron Facet - Disabled in Flat view */
 .services-section:after {
-    content: '';
-    position: absolute;
-    top: -42px;
-    left: 0;
-    width: 48px;
-    height: 46px;
-    background: 
-        linear-gradient(145deg, #FAF8F5 0%, #D8D1C5 100%) top left / 100% 50% no-repeat,
-        linear-gradient(145deg, #181512 0%, #362E27 100%) bottom left / 100% 50% no-repeat;
-    clip-path: polygon(0 50%, 100% 0, 100% 100%);
-    pointer-events: none;
-    z-index: 4;
-    filter: drop-shadow(-4px 4px 8px rgba(0, 0, 0, 0.35));
+    display: none !important;
 }
 
 .section-intro,
@@ -483,18 +458,85 @@ footer {
     position: relative;
 }
 
+.section-intro,
+.section-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 45px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.services-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.services-intro-left {
+    flex: 1.15;
+    max-width: 660px;
+}
+
+.services-intro-right {
+    flex: 0.85;
+    max-width: 520px;
+    padding-bottom: 8px;
+}
+
+.services-intro-right .section-subheading {
+    margin: 0;
+    max-width: 100%;
+}
+
+.section-intro-left {
+    max-width: 680px;
+    flex: 1;
+}
+
 .section-intro h2,
 .section-top h2,
 .process-intro h2,
-.trust-copy h2,
-footer h2 {
-    letter-spacing: -.04em;
-    line-height: 1.1;
+.trust-copy h2 {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    color: #141312;
+    text-align: left;
+    padding-bottom: 0;
+    margin: 0 0 16px;
+    text-wrap: balance;
 }
 
-.section-intro h2 {
-    font-size: clamp(34px, 3.4vw, 52px);
-    margin: 18px 0 22px;
+.process-intro h2 {
+    color: #FFFFFF;
+}
+
+.section-subheading,
+.process-subheading,
+.trust-subheading {
+    font-family: 'Noto Serif', 'Noto Serif Fallback', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.25px;
+    text-align: left;
+    color: rgb(13, 13, 13);
+    max-width: 620px;
+    margin: 0 0 0 0;
+    text-wrap: pretty;
+}
+
+.process-subheading {
+    color: rgba(246, 243, 238, 0.88);
 }
 
 .intro-right {
@@ -502,13 +544,7 @@ footer h2 {
     display: flex;
     align-items: center;
     gap: 30px;
-    padding-bottom: 25px;
-}
-
-.intro-right p {
-    font-size: 12px;
-    line-height: 1.7;
-    flex: 1;
+    padding-bottom: 12px;
 }
 
 .outline-button {
@@ -1314,7 +1350,7 @@ footer h2 {
    ========================================================================== */
 .why-section {
     padding: 72px 0 85px;
-    background: #FAF7F2;
+    background: #f6f3ee;
     position: relative;
 }
 
@@ -1323,32 +1359,38 @@ footer h2 {
 }
 
 .why-heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(34px, 3.4vw, 52px);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -.04em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin: 18px 0 22px 0;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-transform: none;
+    color: #141312;
+    margin: 0 0 20px 0;
+    text-wrap: balance;
 }
 
 .why-intro-desc {
-    max-width: 680px;
-    margin-bottom: 36px;
+    max-width: 860px;
+    margin-bottom: 44px;
 }
 
-.why-intro-desc p {
-    font-size: 12px;
-    line-height: 1.7;
-    color: var(--ink);
-    margin: 0 0 10px 0;
-    font-weight: 400;
-    font-family: 'DM Sans', sans-serif;
+.why-intro-desc .section-subheading {
+    font-family: 'Noto Serif', 'Noto Serif Fallback', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing: -0.25px;
+    color: rgb(13, 13, 13);
+    margin: 0 0 16px 0;
+    max-width: 860px;
+    text-wrap: pretty;
 }
 
-.why-intro-desc p:last-child {
-    margin-bottom: 0;
+.why-intro-desc .why-subheading-secondary {
+    margin: 0;
 }
 
 .why-mobile-dots {
@@ -1501,7 +1543,7 @@ footer h2 {
 .about-content {
     position: relative;
     z-index: 2;
-    max-width: 520px;
+    max-width: 740px;
     width: 100%;
 }
 
@@ -1509,7 +1551,7 @@ footer h2 {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .about-eyebrow-line {
@@ -1520,30 +1562,35 @@ footer h2 {
 }
 
 .about-heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(32px, 3.4vw, 48px);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -.04em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin: 18px 0 24px 0;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-transform: none;
+    color: #141312;
+    margin: 0 0 20px 0;
+    text-wrap: balance;
 }
 
 .about-narrative {
-    max-width: 480px;
+    max-width: 580px;
 }
 
-.about-narrative p {
-    font-size: 12px;
-    line-height: 1.7;
-    color: var(--ink);
-    margin: 0 0 14px 0;
-    font-weight: 400;
-    font-family: 'DM Sans', sans-serif;
+.about-narrative .about-subheading {
+    font-family: 'Noto Serif', 'Noto Serif Fallback', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing: -0.25px;
+    color: rgb(13, 13, 13);
+    margin: 0 0 16px 0;
+    text-wrap: pretty;
 }
 
-.about-narrative p:last-child {
+.about-narrative .about-subheading:last-child {
     margin-bottom: 0;
 }
 
@@ -1662,7 +1709,7 @@ footer h2 {
 .talk-content {
     position: relative;
     z-index: 2;
-    max-width: 480px;
+    max-width: 560px;
     padding: 56px 40px 56px 64px;
     display: flex;
     flex-direction: column;
@@ -1673,7 +1720,7 @@ footer h2 {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 22px;
+    margin-bottom: 14px;
 }
 
 .talk-eyebrow-text {
@@ -1694,24 +1741,30 @@ footer h2 {
 }
 
 .talk-heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(30px, 3.2vw, 44px);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-transform: none;
     color: #F6F3EE;
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
+    text-wrap: balance;
 }
 
-.talk-narrative {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12.5px;
-    line-height: 1.7;
-    color: rgba(246, 243, 238, 0.78);
+.talk-narrative,
+.talk-subheading {
+    font-family: 'Noto Serif', 'Noto Serif Fallback', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.25px;
+    color: rgba(246, 243, 238, 0.88);
     margin: 0 0 32px 0;
-    max-width: 420px;
-    font-weight: 400;
+    max-width: 500px;
+    text-wrap: pretty;
 }
 
 .talk-actions {
@@ -2414,36 +2467,28 @@ footer h2 {
    Media Queries & Responsive Rules
    ========================================================================== */
 @media(min-width:1500px) {
-    .hero-floating-slab {
-        max-width: 1420px;
-        padding: 32px 60px 72px;
-    }
-
     .service-card {
         min-height: 410px;
     }
-
-
 }
 
 @media(max-width:1180px) {
-    .hero-floating-slab {
-        transform: rotateX(2.5deg) rotateY(-1.2deg);
-        padding: 24px 36px 54px;
+    .hero-content-stage {
+        gap: 28px;
     }
 
     .hero-copy {
         max-width: 48%;
     }
 
-    .hero-copy h1 {
-        font-size: 52px;
+    .hero-copy h1,
+    .hero-headline {
+        font-size: 54px;
     }
 
     .hero-visual-3d {
-        width: 52%;
-        transform: scale(0.88);
-        transform-origin: right center;
+        flex: 1.1;
+        transform: none;
     }
 }
 
@@ -2489,12 +2534,13 @@ footer h2 {
         align-items: stretch;
         min-height: auto;
         gap: 36px;
+        padding: 16px 0 32px;
     }
 
     .hero-copy {
         max-width: 100%;
         margin-bottom: 0;
-        transform: translateZ(16px);
+        transform: none;
     }
 
     .hero-visual-3d {
@@ -2507,17 +2553,17 @@ footer h2 {
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateZ(24px);
-        transform-origin: center center;
+        transform: none;
         pointer-events: auto;
+        margin-right: 0;
     }
 
     .hero-stage-artwork-wrapper {
         max-width: 540px;
         mask-image: none;
         -webkit-mask-image: none;
-        transform: rotateY(-2deg) rotateX(2deg);
-        filter: drop-shadow(0 20px 30px rgba(24, 20, 16, 0.28));
+        transform: none;
+        filter: drop-shadow(0 15px 25px rgba(24, 20, 16, 0.2));
     }
 
     .about-container {
@@ -2551,65 +2597,39 @@ footer h2 {
 }
 
 @media(max-width:760px) {
+    .hero-flat-section,
     .hero-stage-outer {
-        perspective: 950px;
-        perspective-origin: 48% 30%;
-        padding: 24px 14px 0;
-        overflow: visible;
-        background-color: #E6E1D8;
+        padding: 0;
+        background-color: #FAF8F4;
     }
 
     .hero-ground-shadow {
-        bottom: 0px;
-        left: 6%;
-        right: 6%;
-        height: 55px;
-        filter: blur(20px);
-        background: radial-gradient(ellipse at 50% 50%, rgba(24, 20, 16, 0.58) 0%, rgba(24, 20, 16, 0.26) 48%, transparent 75%);
+        display: none !important;
     }
 
     .hero-floating-slab {
-        /* Tactile 3D floating perspective tilt & physical extrusion */
-        transform: rotateY(4deg) rotateX(2.5deg) rotateZ(-0.5deg) !important;
-        transform-style: preserve-3d;
-        border-radius: 22px;
-        padding: 24px 20px 38px;
-        background-color: #F5F2EC;
-        border: 1px solid rgba(255, 255, 255, 0.95);
-        box-shadow: 
-            /* Physical 3D Extrusion Left Edge */
-            -1px 0 0 #ded7cd,
-            -2px 0 0 #ded7cd,
-            -3px 0 0 #dbd4ca,
-            -4px 0 0 #d7d0c6,
-            -5px 0 0 #d2cbc1,
-            -7px 0 0 #cdc6bc,
-            -9px 0 0 #c7c0b6,
-            -11px 1px 0 #beb7ad,
-            -13px 1px 0 #b4ada3,
-            /* Deep Left Shadow from the Extruded Edge */
-            -24px 18px 40px rgba(24, 20, 16, 0.28),
-            /* Multi-tiered Floating Elevation Shadows */
-            0 12px 22px -3px rgba(24, 20, 16, 0.22),
-            0 28px 45px -8px rgba(24, 20, 16, 0.3),
-            0 52px 80px -15px rgba(24, 20, 16, 0.34),
-            /* Top & Chamfer Bevel Highlights */
-            inset 0 1.5px 0 rgba(255, 255, 255, 0.98),
-            inset 1.5px 0 0 rgba(255, 255, 255, 0.75);
+        transform: none !important;
+        border-radius: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none !important;
     }
 
     .site-header {
+        width: min(90%, 1350px);
+        margin: 0 auto;
+        padding: 20px 0 10px;
         height: auto;
         min-height: 52px;
-        margin-bottom: 24px;
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
         position: relative;
         z-index: 100;
-        transform: translateZ(60px);
-        transform-style: preserve-3d;
+        transform: none;
     }
 
     .site-header.menu-open {
@@ -2625,47 +2645,66 @@ footer h2 {
         display: none !important;
     }
 
-    /* Three lines hamburger toggle at right top corner */
+    /* Three lines hamburger toggle at right top corner (Staggered right-aligned) */
     .mobile-menu-toggle {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end; /* Right-align the staggered lines matching Image 4 */
         gap: 5px;
         width: 44px;
         height: 44px;
-        border: 1px solid #C4BEB5;
+        border: 1px solid #D6D0C8;
         border-radius: 50%;
-        background: #FAF7F2;
+        background: #FAF8F5;
         cursor: pointer;
-        padding: 0;
+        padding: 0 11px;
+        box-sizing: border-box;
         position: relative;
         z-index: 220;
-        transform: translateZ(80px);
-        box-shadow: 0 3px 10px rgba(24, 20, 16, 0.1);
+        transform: none;
+        box-shadow: 0 2px 8px rgba(24, 20, 16, 0.08);
         transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         flex-shrink: 0;
     }
 
     .mobile-menu-toggle:hover,
     .mobile-menu-toggle:active {
-        background: #EAE5DC;
+        background: #EFEAE2;
         border-color: #8A8379;
         transform: scale(1.04);
     }
 
     .mobile-menu-toggle .hamburger-bar {
         display: block;
-        width: 19px;
-        height: 2px;
-        background-color: #1C1A18;
-        border-radius: 2px;
-        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+        height: 2.5px;
+        background-color: #141312;
+        border-radius: 999px;
+        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    }
+
+    /* Staggered lengths matching Image 4 (top medium, middle longest, bottom shortest) */
+    .mobile-menu-toggle .hamburger-bar:nth-child(1) {
+        width: 16px;
+    }
+
+    .mobile-menu-toggle .hamburger-bar:nth-child(2) {
+        width: 22px;
+    }
+
+    .mobile-menu-toggle .hamburger-bar:nth-child(3) {
+        width: 13px;
     }
 
     /* Transform to 'X' when open */
+    .mobile-menu-toggle.open {
+        align-items: center;
+        padding: 0;
+    }
+
     .mobile-menu-toggle.open .hamburger-bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        width: 20px;
+        transform: translateY(7.5px) rotate(45deg);
     }
 
     .mobile-menu-toggle.open .hamburger-bar:nth-child(2) {
@@ -2674,7 +2713,8 @@ footer h2 {
     }
 
     .mobile-menu-toggle.open .hamburger-bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        width: 20px;
+        transform: translateY(-7.5px) rotate(-45deg);
     }
 
     /* Mobile Dropdown Menu showing desktop headers fields */
@@ -2776,43 +2816,64 @@ footer h2 {
         letter-spacing: 0.26em;
     }
 
+    .hero-headline-br {
+        display: none;
+    }
+
     .hero-copy {
         max-width: 100%;
-        transform: translateZ(16px);
+        transform: none;
+        padding-bottom: 24px;
     }
 
     .hero-copy .eyebrow {
-        font-size: 10.5px;
+        font-size: 11px;
         letter-spacing: 0.18em;
         font-weight: 600;
         color: #7A746B;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
+        text-align: left;
     }
 
     .hero-copy h1,
     .hero-headline {
-        font-size: clamp(28px, 7.5vw, 40px);
-        line-height: 1.08;
-        letter-spacing: 0.01em;
-        margin-bottom: 18px;
+        font-size: 32px;
+        text-align: left;
+        padding-bottom: 0;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
     }
 
-    .hero-copy p {
-        font-size: 15px;
-        line-height: 1.62;
-        color: #4A4641;
-        margin-bottom: 26px;
+    .hero-copy p,
+    .hero-subheading {
+        font-size: 16px;
+        line-height: 1.45;
+        padding-top: 0;
+        text-align: left;
+        color: rgb(13, 13, 13);
+        margin-bottom: 22px;
+        max-width: 100%;
     }
 
     .hero-actions {
-        gap: 16px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
     }
 
     .hero-button {
+        width: auto !important;
+        max-width: fit-content;
         min-width: 0;
-        padding: 15px 24px;
+        justify-content: flex-start;
+        padding: 13px 24px;
         font-size: 13px;
-        font-weight: 600;
+        align-self: flex-start;
+        text-align: left;
+        border-radius: 9999px;
     }
 
     .hero-visual-3d {
@@ -2848,32 +2909,47 @@ footer h2 {
     }
 
     .services-section {
-        margin-top: -36px;
-        padding-top: 24px;
+        margin-top: 0;
+        padding-top: 48px;
     }
 
     .services-section:before {
-        top: -30px;
-        height: 32px;
-        clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%);
+        display: none !important;
     }
 
     .services-section:after {
-        top: -30px;
-        width: 32px;
-        height: 30px;
+        display: none !important;
     }
 
     .section-intro,
-    .section-top {
+    .section-top,
+    .services-intro {
         align-items: flex-start;
         flex-direction: column;
-        gap: 8px;
+        gap: 0;
+    }
+
+    .services-intro-left,
+    .services-intro-right {
+        max-width: 100%;
+        flex: none;
+        padding-bottom: 0;
     }
 
     .section-intro h2,
     .section-top h2 {
-        font-size: 37px;
+        font-size: 32px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        text-align: left;
+    }
+
+    .section-intro .section-subheading {
+        font-size: 16px;
+        line-height: 1.45;
+        margin-bottom: 20px;
+        text-align: left;
     }
 
     .intro-right {
@@ -3060,18 +3136,27 @@ footer h2 {
     }
 
     .why-heading {
-        font-size: 37px;
-        line-height: 1.1;
-        margin: 14px 0 16px;
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 12px 0;
+        text-align: left;
     }
 
     .why-intro-desc {
         margin-bottom: 24px;
     }
 
-    .why-intro-desc p {
-        font-size: 12px;
-        line-height: 1.7;
+    .why-intro-desc .section-subheading {
+        font-size: 16px;
+        line-height: 1.45;
+        margin-bottom: 12px;
+        text-align: left;
+    }
+
+    .why-intro-desc .why-body-text {
+        font-size: 12.5px;
+        line-height: 1.6;
     }
 
     /* Horizontal carousel: 1 card + next card peeking */
@@ -3145,14 +3230,23 @@ footer h2 {
     }
 
     .about-heading {
-        font-size: 37px;
-        line-height: 1.1;
-        margin: 14px 0 16px 0;
+        font-size: 32px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 12px 0;
+        text-align: left;
     }
 
-    .about-narrative p {
-        font-size: 12px;
-        line-height: 1.7;
+    .about-narrative .about-subheading {
+        font-size: 16px;
+        line-height: 1.45;
+        margin: 0 0 12px 0;
+        text-align: left;
+    }
+
+    .about-narrative .about-body-text {
+        font-size: 12.5px;
+        line-height: 1.6;
     }
 
     .about-actions {
@@ -3191,13 +3285,14 @@ footer h2 {
         width: 90%;
     }
 
+    .hero-flat-section,
     .hero-stage-outer {
-        padding: 18px 10px 0;
+        padding: 0;
     }
 
     .hero-floating-slab {
-        padding: 20px 16px 32px;
-        border-radius: 20px;
+        padding: 0;
+        border-radius: 0;
     }
 
     .logo-mark {
@@ -3214,23 +3309,41 @@ footer h2 {
 
     .hero-copy h1,
     .hero-headline {
-        font-size: clamp(24px, 7.3vw, 29px);
-        line-height: 1.1;
+        font-size: 32px;
+        text-align: left;
+        padding-bottom: 0;
+        line-height: 1.15;
+        margin-bottom: 12px;
     }
 
-    .hero-copy p {
-        font-size: 14px;
-        line-height: 1.6;
+    .hero-copy p,
+    .hero-subheading {
+        font-size: 16px;
+        line-height: 1.45;
+        padding-top: 0;
+        text-align: left;
+        color: rgb(13, 13, 13);
+        margin-bottom: 22px;
     }
 
     .hero-actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
         gap: 12px;
     }
 
     .hero-button {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 20px;
+        width: auto !important;
+        max-width: fit-content;
+        min-width: 0;
+        justify-content: flex-start;
+        padding: 13px 22px;
+        font-size: 13px;
+        align-self: flex-start;
+        text-align: left;
+        border-radius: 9999px;
     }
 
     .hero-stage-artwork-wrapper {
@@ -3238,30 +3351,26 @@ footer h2 {
     }
 
     .services-section {
-        margin-top: -26px;
-        padding-top: 20px;
+        margin-top: 0;
+        padding-top: 40px;
     }
 
     .services-section:before {
-        top: -22px;
-        height: 24px;
-        clip-path: polygon(0 0, 100% 22px, 100% 100%, 0 100%);
+        display: none !important;
     }
 
     .services-section:after {
-        top: -24px;
-        width: 28px;
-        height: 26px;
+        display: none !important;
     }
 
     .section-intro h2,
     .section-top h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .intro-right {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-start; 
         gap: 2px;
     }
 
@@ -3529,7 +3638,10 @@ footer h2 {
     }
 
     .why-heading {
-        font-size: 32px;
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 12px 0;
     }
 
     .why-card {
@@ -3551,6 +3663,9 @@ footer h2 {
 
     .about-heading {
         font-size: 30px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 12px 0;
     }
 
     .about-visual-canvas,

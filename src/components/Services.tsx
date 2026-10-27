@@ -5,13 +5,12 @@ export const Services: React.FC = () => {
     <section className="services-section" id="services">
       <div className="container">
         <div className="section-intro services-intro">
-          <div>
+          <div className="section-intro-left">
             <div className="eyebrow">OUR SERVICES</div>
-            <h2>FOUR WAYS WE MOVE<br />YOUR BUSINESS FORWARD</h2>
-          </div>
-          <div className="intro-right">
-            <p>Strategy, creative and performance, brought together to help you attract the right audience and turn opportunities into lasting growth.</p>
-            <a className="outline-button" href="#contact">Explore All Services <span>→</span></a>
+            <h2>Four ways we move your business forward</h2>
+            <p className="section-subheading">
+              Strategy, creative and performance, brought together to help you attract the right audience and turn opportunities into lasting growth.
+            </p>
           </div>
         </div>
 
@@ -31,7 +30,7 @@ export const Services: React.FC = () => {
                 <li>Branding</li>
               </ul>
             </div>
-            <span className="round-arrow" aria-hidden="true">→</span>
+            {/* <span className="round-arrow" aria-hidden="true">→</span> */}
             <div className="service-visual-wrap" aria-hidden="true">
               <img
                 src="/assets/service-card-scene-1.png"
@@ -57,7 +56,7 @@ export const Services: React.FC = () => {
                 <li>Product Photography</li>
               </ul>
             </div>
-            <span className="round-arrow" aria-hidden="true">→</span>
+            {/* <span className="round-arrow" aria-hidden="true">→</span> */}
             <div className="service-visual-wrap" aria-hidden="true">
               <img
                 src="/assets/service-card-scene-2.png"
@@ -83,7 +82,7 @@ export const Services: React.FC = () => {
                 <li>Influencer Ads</li>
               </ul>
             </div>
-            <span className="round-arrow" aria-hidden="true">→</span>
+            {/* <span className="round-arrow" aria-hidden="true">→</span> */}
             <div className="service-visual-wrap" aria-hidden="true">
               <img
                 src="/assets/service-card-scene-3.png"
@@ -108,7 +107,7 @@ export const Services: React.FC = () => {
                 <li>Digital Expansion</li>
               </ul>
             </div>
-            <span className="round-arrow" aria-hidden="true">→</span>
+            {/* <span className="round-arrow" aria-hidden="true">→</span> */}
             <div className="service-visual-wrap growth-visual-wrap" aria-hidden="true">
               <img
                 src="/assets/service-card-scene-4-rocks.png"

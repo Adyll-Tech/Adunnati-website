@@ -69,11 +69,11 @@ export const Header: React.FC = () => {
           <span>WORK</span>
           <span className="nav-arrow">↗</span>
         </a>
-        <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>
+        <a href="#about-us" onClick={(e) => handleNavClick(e, 'about-us')}>
           <span>ABOUT</span>
           <span className="nav-arrow">↗</span>
         </a>
-        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>
+        <a href="#lets-talk" onClick={(e) => handleNavClick(e, 'lets-talk')}>
           <span>CONTACT</span>
           <span className="nav-arrow">↗</span>
         </a>

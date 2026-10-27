@@ -82,13 +82,15 @@ export const WhyAdunnati: React.FC = () => {
           <div className="eyebrow">WHY ADUNNATI</div>
 
           <h2 className="why-heading">
-            THOUGHTFUL STRATEGY.<br />
-            WORK THAT MEANS BUSINESS.
-          </h2>
-
+            Thoughtful strategy Work that <br className="why-heading-br" />
+             <span className="why-heading-accent"> means business</span>
+          </h2> 
+ 
           <div className="why-intro-desc">
-            <p>We believe good marketing starts with understanding the business behind it.</p>
-            <p>
+            <p className="section-subheading">
+              We believe good marketing starts with understanding the business behind it.
+            </p>
+            <p className="section-subheading why-subheading-secondary">
               The goals, the customer, the offer and the numbers all matter. We bring these pieces together
               to build a clear direction, execute with intent and keep improving based on what the work tells us.
             </p>
@@ -108,7 +110,7 @@ export const WhyAdunnati: React.FC = () => {
                     <span className="why-card-num">{card.num}</span>
                     <span className="why-card-line" aria-hidden="true"></span>
                   </div>
-                  <div className="why-card-arrow" aria-label="Explore step">
+                  {/* <div className="why-card-arrow" aria-label="Explore step">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5"
@@ -118,7 +120,7 @@ export const WhyAdunnati: React.FC = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </div>
+                  </div> */}
                 </div>
 
                 <h3 className="why-card-title">
