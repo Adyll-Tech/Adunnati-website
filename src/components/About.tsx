@@ -33,7 +33,9 @@ export const About: React.FC = () => {
           {/* <div className="about-actions">
             <a href="#contact" className="about-cta-btn">
               <span>Get To Know Us</span>
-              <span className="about-cta-arrow" aria-hidden="true">↗</span>
+              <span className="about-cta-arrow" aria-hidden="true">
+                <ArrowUpRight size={13} strokeWidth={2.4} />
+              </span>
             </a>
           </div> */}
         </div>

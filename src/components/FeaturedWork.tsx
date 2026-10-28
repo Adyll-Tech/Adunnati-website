@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from './icons/ArrowUpRight';
 
 interface CaseStudy {
   id: string;
@@ -92,8 +93,8 @@ export const FeaturedWork: React.FC = () => {
                 <div className="case-metric">{study.metric}</div>
               </div>
               <a href={study.link} className="case-action-btn">
-                <span>Explore The Project ↗</span>
-                <span className="case-circle-arrow" aria-hidden="true">↗</span>
+                <span>Explore The Project</span>
+                <ArrowUpRight size={14} strokeWidth={2.4} className="case-btn-arrow" />
               </a>
             </article>
           ))}

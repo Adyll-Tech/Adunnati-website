@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from './icons/ArrowUpRight';
 
 export const Hero: React.FC = () => {
   return (
@@ -16,7 +17,8 @@ export const Hero: React.FC = () => {
         </p>
         <div className="hero-actions">
           <a href="#lets-talk" className="dark-button hero-button">
-            Discuss Your Goals <span>↗</span>
+            <span>Discuss Your Goals</span>
+            <ArrowUpRight size={15} strokeWidth={2.4} className="hero-btn-arrow" />
           </a>
         </div>
       </div>

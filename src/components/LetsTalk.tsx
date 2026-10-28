@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from './icons/ArrowUpRight';
 
 export const LetsTalk: React.FC = () => {
   return (
@@ -29,7 +30,7 @@ export const LetsTalk: React.FC = () => {
             <div className="talk-actions">
               <a href="#contact" className="talk-cta-btn" id="talk-start-conversation-btn">
                 <span>Start A Conversation</span>
-                <span className="talk-cta-arrow" aria-hidden="true">↗</span>
+                <ArrowUpRight size={15} strokeWidth={2.4} className="talk-cta-arrow" />
               </a>
             </div>
           </div>
