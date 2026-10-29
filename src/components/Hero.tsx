@@ -23,16 +23,36 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Right Visual 3D Stage with Authentic Laptop resting on Stone and Flanked Metric Cards */}
-      <div className="hero-visual-3d" aria-label="Premium digital brand presentation">
-        <div className="hero-3d-ambient-glow" aria-hidden="true"></div>
-        <div className="hero-plinth-shadow" aria-hidden="true"></div>
+      {/* Right Visual 3D Stage with Architectural 3D Marketing Platform */}
+      <div className="hero-visual-3d" aria-label="Premium digital brand and growth showcase">
+        <div className="hero-3d-ambient-glow" aria-hidden="true" />
+        <div className="hero-plinth-shadow" aria-hidden="true" />
+
         <div className="hero-stage-artwork-wrapper">
           <img
-            src="/assets/hero-stage-hd.png"
-            alt="Adunnati digital showcase - laptop with SŌVRA cosmetic brand mockup resting on chiseled stone plinth with ROAS and Sales performance metrics"
+            src="/assets/hero-growth-stage.png"
+            srcSet="/assets/hero-growth-stage.png 1x, /assets/hero-growth-stage@2x.png 2x"
+            alt="Adunnati digital showcase - architectural 3D marketing podium with live analytics charts, creative campaigns and golden growth trajectory"
             className="hero-stage-artwork-img"
+            loading="eager"
           />
+
+          {/* Floating Glassmorphic Metric Badges */}
+          <div className="hero-floating-badge badge-top" aria-hidden="true">
+            <span className="badge-pulse-indicator" />
+            <div className="badge-text-group">
+              <span className="badge-val">312% ROAS</span>
+              <span className="badge-lbl">Target Acquisition</span>
+            </div>
+          </div>
+
+          <div className="hero-floating-badge badge-bottom" aria-hidden="true">
+            <div className="badge-text-group">
+              <span className="badge-val">4.8× Growth</span>
+              <span className="badge-lbl">Performance Scaled</span>
+            </div>
+            <span className="badge-trend-icon">↗</span>
+          </div>
         </div>
       </div>
     </section>

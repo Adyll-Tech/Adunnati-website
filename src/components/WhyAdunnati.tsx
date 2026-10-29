@@ -82,8 +82,7 @@ export const WhyAdunnati: React.FC = () => {
           <div className="eyebrow">WHY ADUNNATI</div>
 
           <h2 className="why-heading">
-            Thoughtful strategy Work that <br className="why-heading-br" />
-             <span className="why-heading-accent"> means business</span>
+            Thoughtful Strategy Work That Means Business
           </h2> 
  
           <div className="why-intro-desc">

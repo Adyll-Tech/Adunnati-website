@@ -12,7 +12,7 @@ export const About: React.FC = () => {
           </div>
 
           <h2 className="about-heading">
-            Good businesses deserve <br className="about-heading-br" />good digital thinking
+            Good Businesses Deserve Good Digital Thinking
           </h2>
 
           <div className="about-narrative">

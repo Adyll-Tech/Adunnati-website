@@ -62,7 +62,7 @@ export const FeaturedWork: React.FC = () => {
         <div className="section-intro services-intro work-intro">
           <div className="section-intro-left">
             <div className="eyebrow">FEATURED WORK</div>
-            <h2>Real brands Real results</h2>
+            <h2>Real Brands Real Results</h2>
             <p className="section-subheading">
               Every business has a different challenge. Our work starts by understanding it, finding the right approach and focusing on the outcome that matters.
             </p>

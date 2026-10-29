@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight } from './icons/ArrowUpRight';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -123,54 +122,23 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="drawer-nav-container">
-          <span className="drawer-nav-label">EXPLORE</span>
           <nav className="drawer-nav-list">
-            <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="drawer-nav-item">
-              <span className="drawer-nav-num">01</span>
-              <span className="drawer-nav-title">EXPERTISE</span>
-              <span className="drawer-nav-arrow">
-                <ArrowUpRight size={16} strokeWidth={2.4} />
-              </span>
+            <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="drawer-nav-link">
+              EXPERTISE
             </a>
-            <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="drawer-nav-item">
-              <span className="drawer-nav-num">02</span>
-              <span className="drawer-nav-title">WORK</span>
-              <span className="drawer-nav-arrow">
-                <ArrowUpRight size={16} strokeWidth={2.4} />
-              </span>
+            <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="drawer-nav-link">
+              WORK
             </a>
-            <a href="#about-us" onClick={(e) => handleNavClick(e, 'about-us')} className="drawer-nav-item">
-              <span className="drawer-nav-num">03</span>
-              <span className="drawer-nav-title">ABOUT</span>
-              <span className="drawer-nav-arrow">
-                <ArrowUpRight size={16} strokeWidth={2.4} />
-              </span>
+            {/* <a href="#why-adunnati" onClick={(e) => handleNavClick(e, 'why-adunnati')} className="drawer-nav-link">
+              Why Us
+            </a> */}
+            <a href="#about-us" onClick={(e) => handleNavClick(e, 'about-us')} className="drawer-nav-link">
+              ABOUT
             </a>
-            <a href="#lets-talk" onClick={(e) => handleNavClick(e, 'lets-talk')} className="drawer-nav-item">
-              <span className="drawer-nav-num">04</span>
-              <span className="drawer-nav-title">CONTACT</span>
-              <span className="drawer-nav-arrow">
-                <ArrowUpRight size={16} strokeWidth={2.4} />
-              </span>
+            <a href="#lets-talk" onClick={(e) => handleNavClick(e, 'lets-talk')} className="drawer-nav-link">
+              CONTACT
             </a>
           </nav>
-        </div>
-
-        <div className="drawer-footer">
-          <a
-            href="#lets-talk"
-            className="drawer-cta-btn"
-            onClick={(e) => handleNavClick(e, 'lets-talk')}
-          >
-            <span>Discuss Your Goals</span>
-            <ArrowUpRight size={15} strokeWidth={2.4} />
-          </a>
-          {/* <div className="drawer-contact-info">
-            <span className="drawer-contact-badge">GET IN TOUCH</span>
-            <a href="mailto:hello@adunnati.com" className="drawer-contact-link">
-              hello@adunnati.com
-            </a>
-          </div> */}
         </div>
       </aside>
     </header>

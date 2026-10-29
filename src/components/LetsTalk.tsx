@@ -17,8 +17,8 @@ export const LetsTalk: React.FC = () => {
             </div>
 
             <h2 className="talk-heading">
-              Tell us where 
-              you want to go
+              Tell Us Where 
+              You Want To Go
             </h2>
 
             <p className="talk-narrative talk-subheading">
