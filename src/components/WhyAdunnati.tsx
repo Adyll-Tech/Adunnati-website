@@ -5,7 +5,8 @@ interface WhyCardItem {
   num: string;
   title: string[];
   subtext: string;
-  sceneImg: string;
+  image1x: string;
+  image2x: string;
 }
 
 const WHY_CARDS: WhyCardItem[] = [
@@ -14,21 +15,24 @@ const WHY_CARDS: WhyCardItem[] = [
     num: '01',
     title: ['WE UNDERSTAND', 'BEFORE WE PLAN'],
     subtext: 'Every business has a different starting point. We take the time to understand yours.',
-    sceneImg: '/assets/why-card-scene-1.png'
+    image1x: '/assets/why-card-v2-1.webp',
+    image2x: '/assets/why-card-v2-1@2x.webp'
   },
   {
     id: 'focus',
     num: '02',
-    title: ['WE FOCUS ON', 'WHAT MATTERS', 'MOST'],
+    title: ['WE FOCUS ON', 'WHAT MATTERS MOST'],
     subtext: "The right work is not about doing more. It's about doing what serves the business best.",
-    sceneImg: '/assets/why-card-scene-2.png'
+    image1x: '/assets/why-card-v2-2.webp',
+    image2x: '/assets/why-card-v2-2@2x.webp'
   },
   {
     id: 'looking-better',
     num: '03',
     title: ['WE KEEP LOOKING', 'FOR BETTER'],
     subtext: 'We use performance, customer response and practical learning to shape the next step.',
-    sceneImg: '/assets/why-card-scene-3.png'
+    image1x: '/assets/why-card-v2-3.webp',
+    image2x: '/assets/why-card-v2-3@2x.webp'
   }
 ];
 
@@ -103,45 +107,20 @@ export const WhyAdunnati: React.FC = () => {
         >
           {WHY_CARDS.map((card) => (
             <article className="why-card" key={card.id}>
-              <div className="why-card-top">
-                <div className="why-card-meta">
-                  <div className="why-card-num-wrap">
-                    <span className="why-card-num">{card.num}</span>
-                    <span className="why-card-line" aria-hidden="true"></span>
-                  </div>
-                  {/* <div className="why-card-arrow" aria-label="Explore step">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div> */}
-                </div>
-
-                <h3 className="why-card-title">
-                  {card.title.map((line, idx) => (
-                    <React.Fragment key={idx}>
-                      {line}
-                      {idx < card.title.length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </h3>
-              </div>
-
-              <div className="why-card-bottom">
+              <div className="why-card-artwork">
                 <img
-                  src={card.sceneImg}
+                  src={card.image1x}
+                  srcSet={`${card.image1x} 1x, ${card.image2x} 2x`}
                   alt={`${card.num} ${card.title.join(' ')}: ${card.subtext}`}
-                  className="why-card-scene-img"
+                  className="why-card-img"
                   loading="lazy"
-                  width="596"
-                  height="444"
+                  width="1190"
+                  height="1322"
                 />
-                <p className="sr-only">{card.subtext}</p>
+              </div>
+              <div className="sr-only">
+                <h3>{card.num} {card.title.join(' ')}</h3>
+                <p>{card.subtext}</p>
               </div>
             </article>
           ))}

@@ -36,23 +36,6 @@ export const Hero: React.FC = () => {
             className="hero-stage-artwork-img"
             loading="eager"
           />
-
-          {/* Floating Glassmorphic Metric Badges */}
-          <div className="hero-floating-badge badge-top" aria-hidden="true">
-            <span className="badge-pulse-indicator" />
-            <div className="badge-text-group">
-              <span className="badge-val">312% ROAS</span>
-              <span className="badge-lbl">Target Acquisition</span>
-            </div>
-          </div>
-
-          <div className="hero-floating-badge badge-bottom" aria-hidden="true">
-            <div className="badge-text-group">
-              <span className="badge-val">4.8× Growth</span>
-              <span className="badge-lbl">Performance Scaled</span>
-            </div>
-            <span className="badge-trend-icon">↗</span>
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,10 @@
 import React from 'react';
 
+interface ServiceBullet {
+  text: string;
+  link: string; // Space for future links, currently left empty
+}
+
 interface ServiceItem {
   number: string;
   image1x: string;
@@ -7,97 +12,74 @@ interface ServiceItem {
   imageAlt: string;
   title: string;
   description: string;
-  bullets: string[];
-  link: string;
+  bullets: ServiceBullet[];
 }
 
 const servicesData: ServiceItem[] = [
   {
     number: '01',
-    image1x: '/assets/service-card-scene-1-new.png',
-    image2x: '/assets/service-card-scene-1-sharp@2x.png',
-    imageAlt: 'Laptop displaying analytics and website dashboard',
-    title: 'Grow Your Digital Presence',
+    image1x: '/assets/service-card-1.webp',
+    image2x: '/assets/service-card-1@2x.webp',
+    imageAlt: 'Build a Stronger Digital Presence - Laptop and mobile showcasing website and analytics',
+    title: 'Build Your Digital Presence',
     description: 'Build a strong online presence that gets you noticed and brings the right customers.',
     bullets: [
-      'Websites',
-      'Landing Pages',
-      'Shopify Stores',
-      'Social Media Management',
-      'Branding',
+      { text: 'Websites', link: '' },
+      { text: 'Landing Pages', link: '' },
+      { text: 'Shopify Stores', link: '' },
+      { text: 'Social Media Management', link: '' },
+      { text: 'Branding', link: '' },
     ],
-    link: '#contact',
   },
   {
     number: '02',
-    image1x: '/assets/service-card-scene-2-new.png',
-    image2x: '/assets/service-card-scene-2-sharp@2x.png',
-    imageAlt: 'Framed typography art and creative palette design',
+    image1x: '/assets/service-card-2.webp',
+    image2x: '/assets/service-card-2@2x.webp',
+    imageAlt: 'Creative Production for Brands that Grow - Video ads, reels and product photography studio setup',
     title: 'Create Impactful Content',
     description: 'Engaging visuals and messaging that connect with your audience and create demand.',
     bullets: [
-      'Static Ads',
-      'Video Ads',
-      'Reels & Short Videos',
-      'E-commerce Photoshoots',
-      'Product Photography',
+      { text: 'Static Ads', link: '' },
+      { text: 'Video Ads', link: '' },
+      { text: 'Reels & Short Videos', link: '' },
+      { text: 'E-commerce Photoshoots', link: '' },
+      { text: 'Product Photography', link: '' },
     ],
-    link: '#contact',
   },
   {
     number: '03',
-    image1x: '/assets/service-card-scene-3-new.png',
-    image2x: '/assets/service-card-scene-3-sharp@2x.png',
-    imageAlt: 'Smartphone with floating social media marketing icons',
-    title: 'Bring in Right Customers',
+    image1x: '/assets/service-card-3.webp',
+    image2x: '/assets/service-card-3@2x.webp',
+    imageAlt: 'Target the Right Audience - Lead generation campaigns and performance marketing dashboard',
+    title: 'Bring In Right Customers',
     description: 'Performance marketing to reach the right people and turn interest into enquiries and sales.',
     bullets: [
-      'Meta Ads',
-      'Google Ads',
-      'Lead Generation',
-      'E-commerce Sales',
-      'Influencer Ads',
+      { text: 'Meta Ads', link: '' },
+      { text: 'Google Ads', link: '' },
+      { text: 'Lead Generation', link: '' },
+      { text: 'E-commerce Sales', link: '' },
+      { text: 'Influencer Ads', link: '' },
     ],
-    link: '#contact',
   },
   {
     number: '04',
-    image1x: '/assets/service-card-scene-4-new.png',
-    image2x: '/assets/service-card-scene-4-sharp@2x.png',
-    imageAlt: 'Data-driven growth chart podium with golden arrow',
+    image1x: '/assets/service-card-4.webp',
+    image2x: '/assets/service-card-4@2x.webp',
+    imageAlt: 'Improve What Works - Ad account audit metrics, ROAS growth and scaling strategy dashboard',
     title: 'Improve What Works',
     description: 'Data-driven insights and continuous optimisation to help you get better results over time.',
     bullets: [
-      'Ad Account Audits',
-      'Conversion Optimisation',
-      'ROAS Improvement',
-      'Digital Expansion',
+      { text: 'Ad Account Audits', link: '' },
+      { text: 'Conversion Optimisation', link: '' },
+      { text: 'ROAS Improvement', link: '' },
+      { text: 'Digital Expansion', link: '' },
     ],
-    link: '#contact',
   },
 ];
 
 export const Services: React.FC = () => {
   return (
     <section className="services-section" id="services">
-      {/* Decorative background curve with golden accent dot */}
-      <svg
-        className="services-bg-curve"
-        viewBox="0 0 1000 360"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-        preserveAspectRatio="xMidYMin meet"
-      >
-        <path
-          d="M920 -20 C820 40, 680 90, 592 134 C540 162, 510 240, 500 320"
-          stroke="#dfd5c4"
-          strokeWidth="1.2"
-          strokeLinecap="round"
-        />
-        <circle cx="592" cy="134" r="4.5" fill="#a67c37" />
-      </svg>
-
       <div className="container">
         {/* Section Header */}
         <div className="services-intro">
@@ -110,7 +92,7 @@ export const Services: React.FC = () => {
               Strategy, creative and performance, brought together to help you attract the right audience and turn opportunities into lasting growth.
             </p>
           </div>
-
+{/* 
           <div className="services-intro-right">
             <a href="#contact" className="services-view-all-btn">
               <span>View All Services</span>
@@ -130,15 +112,14 @@ export const Services: React.FC = () => {
                 <polyline points="7 7 17 7 17 17" />
               </svg>
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* 4 Cards Grid */}
         <div className="service-grid">
           {servicesData.map((item) => (
-            <a
+            <div
               key={item.number}
-              href={item.link}
               className={`service-card service-card-${item.number}`}
             >
               {/* Card visual banner */}
@@ -164,48 +145,38 @@ export const Services: React.FC = () => {
 
                 <ul className="service-bullets">
                   {item.bullets.map((bullet, idx) => (
-                    <li key={idx}>
-                      <span className="bullet-arrow" aria-hidden="true">
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.4"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="7" y1="17" x2="17" y2="7" />
-                          <polyline points="7 7 17 7 17 17" />
-                        </svg>
-                      </span>
-                      <span>{bullet}</span>
+                    <li key={idx} className="service-bullet-item">
+                      <a
+                        href={bullet.link || '#'}
+                        className="service-bullet-link"
+                        onClick={(e) => {
+                          if (!bullet.link || bullet.link === '#') {
+                            e.preventDefault();
+                          }
+                        }}
+                      >
+                        <span className="bullet-arrow" aria-hidden="true">
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.4"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                          </svg>
+                        </span>
+                        <span className="bullet-text">{bullet.text}</span>
+                      </a>
                     </li>
                   ))}
                 </ul>
-
-                {/* <div className="service-card-footer">
-                  <span className="service-explore-text">Explore Services</span>
-                  <span className="service-footer-line" aria-hidden="true" />
-                  <span className="service-round-btn" aria-hidden="true">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </span>
-                </div> */}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
